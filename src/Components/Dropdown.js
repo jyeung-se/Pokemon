@@ -18,6 +18,7 @@ class Dropdown extends Component {
   render() {
     return (
       <select name="types" onChange={this.handleChange}>
+        <option>Select Type</option>
         <option value="fire">Fire</option>
         <option value="water">Water</option>
         <option value="grass">Grass</option>

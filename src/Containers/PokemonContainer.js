@@ -27,15 +27,11 @@ class PokemonContainer extends Component {
   }
 
   handleChange = (event) => {
-    console.log("Before: SEARCH INPUT IS", this.state.searchInput)
-    // let filteredPokemonByName = this.state.pokemons.filter(pokemon => {
-    //   return pokemon.name.toLowerCase().includes(this.state.searchInput.toLowerCase())
-    // })
-
+    // console.log("Before: SEARCH INPUT IS", this.state.searchInput)
     this.setState({
       searchInput: event.target.value
-      // filteredPokemonByName: filteredPokemonByName
-    }, () => console.log("After: SEARCH INPUT IS", this.state.searchInput))
+    // }, () => console.log("After: SEARCH INPUT IS", this.state.searchInput))
+    })
   }
 
   handleTypeChange = (event) => {
@@ -67,7 +63,7 @@ class PokemonContainer extends Component {
         <b>Pokemon Name: </b><Search searchInput={this.state.searchInput} handleChange={this.handleChange} />
         <center>--------------------------</center>
         <b>Pokemon Type: </b><TypeSearch typeInput={this.state.typeInput} handleTypeChange={this.handleTypeChange} />
-        <Dropdown />
+        {/* <Dropdown /> */}
         {
           this.state.searchInput !== '' ?
           <PokemonList pokemons={filteredPokemonByName} handleClick={this.handleClick} searchInput={this.state.searchInput} typeInput={this.state.typeInput} allPokemons={this.state.pokemons} />

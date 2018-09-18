@@ -1,7 +1,7 @@
 import React from 'react'
 
 const TypeSearch = props => {
-  console.log('TypeSearch props are ', props)
+  // console.log('TypeSearch props are ', props)
 
   return (
     <div>

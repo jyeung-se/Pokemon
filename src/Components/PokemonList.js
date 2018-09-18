@@ -2,7 +2,7 @@ import React from 'react'
 import Pokemon from './PokemonCard'
 
 const PokemonList = props => {
-console.log('pokemonMapper props are ', props.pokemons)
+// console.log('pokemonMapper props are ', props.pokemons)
 
   const pokemonMapper = props.pokemons.map((pokemon, index) => {
     return <Pokemon key={index} pokemon={pokemon} handleClick={props.handleClick} />
