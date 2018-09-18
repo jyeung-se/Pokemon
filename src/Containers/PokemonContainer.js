@@ -67,6 +67,7 @@ class PokemonContainer extends Component {
         <b>Pokemon Name: </b><Search searchInput={this.state.searchInput} handleChange={this.handleChange} />
         <center>--------------------------</center>
         <b>Pokemon Type: </b><TypeSearch typeInput={this.state.typeInput} handleTypeChange={this.handleTypeChange} />
+        <Dropdown />
         {
           this.state.searchInput !== '' ?
           <PokemonList pokemons={filteredPokemonByName} handleClick={this.handleClick} searchInput={this.state.searchInput} typeInput={this.state.typeInput} allPokemons={this.state.pokemons} />
