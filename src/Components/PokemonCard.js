@@ -1,6 +1,8 @@
 import React, {Component} from 'react'
 
 
+let backSpriteSound = "assets/backSpriteSound.wav"
+
 let PokemonSFX = [
   "assets/PokemonSounds/001 - Bulbasaur.wav",
   "assets/PokemonSounds/002 - Ivysaur.wav",
@@ -26,7 +28,8 @@ let PokemonSFX = [
   "assets/PokemonSounds/022 - Fearow.wav",
   "assets/PokemonSounds/023 - Ekans.wav",
   "assets/PokemonSounds/024 - Arbok.wav",
-  "assets/PokemonSounds/025 - Pikachu.wav", // Pikachu sound file does not exist. Download and sub in a sound
+  // "assets/PokemonSounds/025 - Pikachu.wav", // Pikachu sound file does not exist. Download and sub in a sound
+  "assets/drums4pikachu.wav", // Substitute sound for pikachu
   "assets/PokemonSounds/026 - Raichu.wav",
   "assets/PokemonSounds/027 - Sandshrew.wav",
   "assets/PokemonSounds/028 - Sandslash.wav",
@@ -255,9 +258,20 @@ class PokemonCard extends Component {
   }
 
 
+  playBackSpriteSound = () => {
+    let theBackSpriteAudio = new Audio(backSpriteSound)
+    theBackSpriteAudio.play()
+  }
+
+
+  // handleSound = (pokemon) => {
+  //   this.playSound(pokemon)
+  // }
+
   handleSound = (pokemon) => {
     this.playSound(pokemon)
   }
+
 
   render() {
     return (
@@ -273,13 +287,12 @@ class PokemonCard extends Component {
           <h1 className="center-text">{this.props.pokemon.name}</h1>
           <div style={ {width:239, margin:'auto'} }>
           <div style={ {width:96,margin:'auto'} }>
-              {(this.state.showFront === true) ? <img src={this.props.pokemon.sprites.front} onClick={() => this.handleSound(this.props.pokemon)} alt="pokemon" /> : <img src={this.props.pokemon.sprites.back} onClick={this.handleClick} alt="pokemon" />}
+              {(this.state.showFront === true) ? <img src={this.props.pokemon.sprites.front} onClick={() => this.handleSound(this.props.pokemon)} alt="pokemon" /> : <img src={this.props.pokemon.sprites.back} onClick={() => this.playBackSpriteSound()} alt="pokemon" />}
           </div>
           </div>
           <button onClick={() => this.handleFlip(this.props.pokemon)} style={{padding:10}} className="center-text flip-image" data-action="flip-image"><b>FLIP ME DAMMIT!!</b></button>
           </div>
       </div>
-
     )
   }
 }
