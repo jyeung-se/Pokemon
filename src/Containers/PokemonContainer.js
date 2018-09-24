@@ -60,9 +60,10 @@ class PokemonContainer extends Component {
     // console.log("this.state.pokemons are", this.state.pokemons)
     return (
       <div>
-        <b>Pokemon Name: </b><Search searchInput={this.state.searchInput} handleChange={this.handleChange} />
+        <h3 style={{color:'#d30c16'}}>Pokemon Name</h3><Search searchInput={this.state.searchInput} handleChange={this.handleChange} />
+        <br/>
         <center>--------------------------</center>
-        <b>Pokemon Type: </b><TypeSearch typeInput={this.state.typeInput} handleTypeChange={this.handleTypeChange} />
+        <h3 style={{color:'#d30c16'}}>Pokemon Type</h3><TypeSearch typeInput={this.state.typeInput} handleTypeChange={this.handleTypeChange} />
         {/* <Dropdown /> */}
         {
           this.state.searchInput !== '' ?
